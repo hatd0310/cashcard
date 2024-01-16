@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.0'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+logger.quiet('An info log message which is always logged.')
+logger.error('An error log message.')
+logger.warn('A warning log message.')
+logger.lifecycle('A lifecycle info log message.')
+logger.info('An info log message.')
+logger.debug('A debug log message.')
+logger.trace('A trace log message.') 
+
+group = 'com.gumbox'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+	targetCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api
+	implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
+	
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
