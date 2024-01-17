@@ -29,17 +29,17 @@ import com.gumbox.cashcard.CashCard;
 @RequestMapping("/cashcards")
 class CashCardController {
 
-    /*
-     * URL: http://localhost:8000/cashcards/{requestId}/abc?{RequestParam},
-     *
-     * @PathVariable is used to capture values from the URL path.
-     *
-     * @RequestParam is used to capture query parameters or form parameters from the
-     * URL.
-     */
-    @GetMapping("/{requestedId}")
-    private ResponseEntity<CashCard> findById() {
-	CashCard cashCard = new CashCard(1000L, 0.0);
-	return ResponseEntity.ok(cashCard);
-    }
+	/*
+	 * URL: http://localhost:8000/cashcards/{requestId}/abc?{RequestParam},
+	 *
+	 * @PathVariable is used to capture values from the URL path.
+	 *
+	 * @RequestParam is used to capture query parameters or form parameters from the
+	 * URL.
+	 */
+	@GetMapping("/{requestedId}")
+	private ResponseEntity<CashCard> findById() {
+		CashCard cashCard = new CashCard(1000L, 0.0);
+		return ResponseEntity.ok(cashCard);
+	}
 }
